@@ -1,0 +1,28 @@
+appname="轻工具箱"
+appver="3.1.1"
+appcode="3111"
+appsdk="23"
+path_pattern=""
+packagename="com.Light.toolbox"
+app_key=""
+app_channel=""
+developer=""
+description=""
+debugmode=true
+user_permission={
+  "ACCESS_COARSE_LOCATION",
+  "ACCESS_FINE_LOCATION",
+  "ACCESS_NETWORK_STATE",
+  "ACCESS_WIFI_STATE",
+  "CHANGE_NETWORK_STATE",
+  "DOWNLOAD_WITHOUT_NOTIFICATION",
+  "INSTALL_SHORTCUT",
+  "INTERNET",
+  "READ_EXTERNAL_STORAGE",
+  "READ_PHONE_STATE",
+  "RECORD_AUDIO",
+  "REQUEST_INSTALL_PACKAGES",
+  "SET_WALLPAPER",
+  "SYSTEM_ALERT_WINDOW",
+  "WRITE_EXTERNAL_STORAGE"
+}
