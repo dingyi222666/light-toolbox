@@ -1,0 +1,77 @@
+{
+  LinearLayout;
+  orientation="vertical";
+  layout_height="fill";
+  layout_width="fill";
+  {
+
+    LinearLayout,
+    layout_marginTop="-1sp";
+    layout_height="56dp";
+    layout_width="fill";
+    BackgroundColor=returntheme();
+    orientation="horizontal";
+    gravity='center';--重力属性
+    id="searchbar";
+    elevation="2dp";
+    {
+      ImageView;
+      src="image/twotone_arrow_back_black_24dp.png";
+      layout_height="56dp";
+      layout_width="56dp";
+      padding="16dp";
+      id="ssgb";
+      ColorFilter="#ffffffff";--图片着色
+      onClick=function()
+         activity.setResult(10000,Intent());
+         activity.finish();
+      end,
+    };
+    {
+      LinearLayout;
+      layout_width="-1";
+      layout_margin="8dp";
+      layout_marginLeft="16dp";
+      layout_marginRight="16dp";
+      layout_height="-1";
+      layout_weight="1";     
+      Elevation="0dp";
+      {
+        EditText;
+        id="ssbjk";
+        layout_width="-1";
+        layout_height="-1";
+        gravity="left|center";
+        background="#00000000";
+        hint="搜索";
+        paddingLeft="8dp";
+        textColor="#ffffffff";
+        textSize="19sp";
+        singleLine=true;
+      };
+    };
+
+    {
+      ImageView;
+      src="image/search.png";
+      layout_height="48dp";
+      layout_width="48dp";
+      padding="12dp";
+      ColorFilter="#ffffffff";--图片着色
+      id="ssss";
+    };
+  };
+ {
+    GridView;
+    numColumns="2";
+    -- columnWidth="20dp";
+    layout_height="fill";
+    layout_weight="1";
+    layout_width="fill";
+    id="grid_3";
+    gravity="center";
+    horizontalSpacing="-15dp";--横向布局
+    verticalSpacing="-15dp";--竖向布局
+  };
+
+};

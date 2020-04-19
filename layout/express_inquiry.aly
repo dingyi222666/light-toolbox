@@ -1,0 +1,123 @@
+{
+  FrameLayout,
+  layout_width="fill";
+  layout_height="fill";
+  {
+    LinearLayout;
+    layout_width="fill";
+    layout_height="fill";
+    orientation="vertical";
+    BackgroundColor=0xffffffff,
+    {
+      LinearLayout;--整个动画栏--
+      layout_height="-2";
+      layout_width="-1";
+      id="toolbar";
+      BackgroundColor=returntheme();
+      elevation="2dp";
+      orientation="vertical";
+      {
+        LinearLayout;--顶栏--
+        layout_height="56dp";
+        layout_width="-1";
+        gravity="left|center";
+        {
+          ImageView;
+          layout_height="56dp";
+          layout_width="56dp";
+          padding="16dp";
+          ColorFilter="#ffffffff";
+          id="back";
+          src="image/twotone_arrow_back_black_24dp.png";
+          onClick=function()
+            activity.finish();
+          end,
+          background=转波纹色(0x5FFFFFFF);
+        };
+        {
+          TextView;
+          layout_height="-2";
+          layout_width="-1";
+          layout_weight="1";
+          paddingLeft="16dp";
+          textColor="#ffffffff";
+          textSize="20sp";
+          text="快递查询";
+        };
+
+      };
+
+    };
+    {
+      LinearLayout;
+      --    paddingTop="8dp";
+      layout_marginTop="10dp";
+      gravity="center";
+      layout_height="65dp";
+      layout_width="fill";
+      {
+        MyEditText
+        {
+          id="zh1";
+          Hint="请输入你要查询的单号....",
+          radius=20;
+          textSize="15dp";
+          HintTextColor=returntheme();
+
+        },
+        layout_width="fill";
+        BackgroundColor=0xffffffff,
+      }
+    };
+
+    {
+      LinearLayout;--线性布局
+      layout_width='fill';--布局宽度
+      layout_height='fill';--布局高度
+      Gravity='center';--重力属性
+      id="tis";
+      Visibility=8;
+      {
+        ProgressBar;--进度条控件
+        layout_width='wrap';--进度条宽度
+        layout_height='wrap';--进度条高度
+        layout_gravity='center';--重力属性
+        id="noting",
+      };
+    };
+    {
+      ListView;
+      
+      paddingTop="1dp";
+      layout_width="-1";
+      layout_height="-1";
+      id="lbx";
+      dividerHeight="0",--分割线高度
+    verticalScrollBarEnabled=false,--隐藏滑条
+      Visibility=0;
+    };
+
+  };
+  {
+    CardView,
+    
+    layout_width="56dp";    
+    layout_height="56dp";
+    radius="28dp",      
+    layout_gravity="bottom|right",
+    BackgroundColor=returntheme();
+    layout_margin="13dp",
+         {
+          ImageView;
+          layout_height="56dp";
+          layout_width="56dp";
+          padding="15dp";
+          ColorFilter="#ffffffff";
+          id="ks";
+          src="image/search.png";
+          
+          background=转波纹色(0x5FFFFFFF);
+        };
+  }
+
+}

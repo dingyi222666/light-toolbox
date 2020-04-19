@@ -1,0 +1,90 @@
+{
+  LinearLayout;
+  orientation="vertical";
+  layout_height="fill";
+  layout_width="fill";
+  {
+    LinearLayout;--整个动画栏--
+    layout_height="-2";
+    layout_width="-1";
+    id="toolbar";
+    elevation="2dp";
+    BackgroundColor=returntheme();
+    orientation="vertical";
+    {
+      LinearLayout;--顶栏--
+      layout_height="56dp";
+      layout_width="-1";
+      gravity="left|center";
+      {
+        ImageView;
+        src="image/left.png";
+        layout_height="56dp";
+        layout_width="56dp";
+        padding="16dp";
+        foreground=转波纹色(0x5FFFFFFF);
+        onClick=function(l,v)
+          activity.finish();
+        end;
+        ColorFilter="#ffffffff";--图片着色
+        id="ssss";
+      };
+      {
+        TextView;
+        layout_height="-2";
+        layout_width="-1";
+        layout_weight="1";
+        paddingLeft="16dp";
+        textColor="#ffffffff";
+        textSize="20sp";
+        text="查看源码";
+      };
+
+      {
+        ImageView;
+        src="image/ic_dots_vertical.png";
+        layout_height="56dp";
+        layout_width="56dp";
+        padding="16dp";
+        foreground=转波纹色(0x5FFFFFFF);
+        onClick=function(l,v)
+          pop=PopupMenu(activity,l)
+          menu=pop.Menu
+          menu.add("复制").onMenuItemClick=function(a)
+            写入剪贴板(cc.Text)
+            提示("已复制")
+          end
+          menu.add("分享").onMenuItemClick=function(a)
+            分享文字(cc.Text)
+          end
+          menu.add("导出").onMenuItemClick=function(a)
+            textqq=文字文件夹路径.."/export"..os.date("%Y-%m-%d %H:%M:%S")..".html"
+            创建文件(textqq)
+            写入文件(textqq,cc.Text)
+            提示("已导出到"..textqq)
+          end
+          pop.show()--显示     
+        end;
+        ColorFilter="#ffffffff";--图片着色
+        id="ssss";
+      };
+    };
+
+  };
+{
+  ScrollView;--纵向滚动
+  layout_width='fill';--宽
+  layout_height='fill';--高
+  --在这里写布局
+  {
+    TextView;--文本控件
+    layout_width='fill';--文本宽度
+    layout_height='fill';--文本高度
+    textColor='#ff000000';--文本颜色
+    textSize='18sp';--文本大小
+    id="cc";
+    textIsSelectable=true;--内容可选复制
+  };
+};
+
+};

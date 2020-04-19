@@ -1,0 +1,77 @@
+{
+  ScrollView;
+  layout_height="fill";
+  layout_width="fill";
+  {
+    LinearLayout;
+    orientation="vertical";
+    layout_height="fill";
+    layout_width="fill";
+    {
+      LinearLayout;
+      orientation="vertical";
+      layout_margin="10dp",--布局边距
+      layout_height="wrap";
+      layout_width="fill";
+      id="Notice";
+    };
+    {
+      CardView;
+      layout_margin="10dp";
+      radius="15dp";
+      layout_height="180dp";
+      layout_width="fill";
+      elevation="3dp";
+      --    id="handwriting";
+      {--卡片二内置布局开始
+        LinearLayout;
+        layout_width="fill";
+        layout_height="fill";
+        Orientation='vertical';--布局方向
+        {--搜索标题栏布局开始
+          LinearLayout;
+          BackgroundColor=returntheme();
+          layout_width="fill";
+          layout_height="45dp";
+          {
+            TextView;
+            textSize="18sp";
+            text="随手记";
+            Gravity="left|center";
+            layout_marginLeft="20dp";
+            textColor="#ffffffff";
+            layout_gravity="left|center";
+            layout_width="60dp";
+            layout_height="fill";
+            layout_weight="1";
+          };
+          {
+            LinearLayout;
+            id="ji_png";
+            gravity="center";
+            layout_width="50dp";
+            layout_height="50dp";
+            {
+              ImageView;
+              colorFilter="#ffffffff";
+              src="image/ic_dots_vertical.png";
+              layout_gravity="center";
+              layout_width="25dp";
+              layout_height="25dp";
+
+            };
+          };
+        };--搜索标题栏布局结束
+
+        {
+          EditText;
+          layout_width="fill";
+          layout_height="wrap";
+          id="Chronicle";
+          text=获取随手记内容()
+        };
+
+      };
+    };
+  };
+};

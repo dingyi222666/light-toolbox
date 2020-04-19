@@ -1,0 +1,92 @@
+{
+  LinearLayout;
+  orientation="vertical";
+  layout_height="fill";
+  layout_width="fill";
+  {
+    LinearLayout;--整个动画栏--
+    layout_height="-2";
+    layout_width="-1";
+    id="toolbar";
+    elevation="2dp";
+    BackgroundColor=returntheme();
+    orientation="vertical";
+    
+    {
+      LinearLayout;--顶栏--
+      layout_height="56dp";
+      layout_width="-1";
+      gravity="left|center";
+      {
+        ImageView;
+        layout_height="56dp";
+        layout_width="56dp";
+        padding="16dp";
+        ColorFilter="#ffffffff";
+        id="back";
+        background=转波纹色(0x5FFFFFFF);
+        src="image/twotone_arrow_back_black_24dp.png";
+        onClick=function() activity.finish() end,
+      };
+      {
+        TextView;
+        layout_height="-2";
+        layout_width="-1";
+        layout_weight="1";
+        paddingLeft="16dp";
+        textColor="#ffffffff";
+
+        textSize="20sp";
+        id="标题";
+      };
+      {
+        ImageView;
+        src="image/ic_dots_vertical.png";
+        layout_height="56dp";
+        layout_width="56dp";
+        padding="16dp";
+        background=转波纹色(0x5FFFFFFF);
+        onClick=function(l,v)
+          pop=PopupMenu(activity,l)
+          menu=pop.Menu
+          menu.add("刷新").onMenuItemClick=function(a)
+            webview.reload()
+          end
+          menu.add("分享链接").onMenuItemClick=function(a)
+            分享文字(webview.getUrl())
+          end
+          menu.add("横竖屏切换").onMenuItemClick=function(a)
+            if SetHSP==nil then
+              --横屏
+              activity.setRequestedOrientation(0);
+              SetHSP="H"
+             else
+              --竖屏
+              activity.setRequestedOrientation(1);
+              SetHSP=nil
+            end
+            --复制粘贴到各种点击事件里
+          end
+          menu.add("浏览器打开").onMenuItemClick=function(a)
+            import "android.content.Intent"
+            import "android.net.Uri"
+            viewIntent = Intent("android.intent.action.VIEW",Uri.parse(webview.getUrl()))
+            activity.startActivity(viewIntent)
+          end
+          pop.show()--显示;
+        end;
+        ColorFilter="#ffffffff";--图片着色
+        id="ssss";
+      };
+    };
+
+  };
+
+  {
+    LuaWebView;
+    layout_height="fill";
+    layout_width="fill";
+    id="webview";
+    
+  };
+};

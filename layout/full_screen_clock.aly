@@ -1,0 +1,32 @@
+{
+  FrameLayout;
+  Focusable=true,
+  FocusableInTouchMode=true,
+  
+  id="aaa",
+  BackgroundColor=0xffffffff,
+  {
+    LinearLayout;
+    layout_height="80%w",
+    gravity="center";
+    layout_gravity="center";
+    {
+      EvaporateTextView;
+      textSize="100sp";
+      id="asp";
+      text="00:00";
+      gravity="center";
+      layout_gravity="center";
+    };
+  },
+  {
+    TextView,
+    textSize="18dp",
+    layout_gravity="bottom|center",
+    id="date",
+    layout_margin="10dp",
+    layout_marginTop="30dp",--布局顶距
+    gravity="bottom|center",
+    TextColor=0xff000000,    
+  },
+};

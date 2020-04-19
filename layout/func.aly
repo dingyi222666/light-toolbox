@@ -1,0 +1,53 @@
+{
+  LinearLayout;
+  layout_height="fill";
+  layout_width="fill";
+  orientation="vertical";
+  {
+    LinearLayout;--整个动画栏--
+    layout_height="-2";
+    layout_width="-1";
+    id="toolbar";
+    elevation="2dp";
+    orientation="vertical";
+    {
+      LinearLayout;--状态栏沉浸后内容会上升到状态栏，顶状态栏位置--
+      layout_height=activity.getResources().getDimensionPixelSize(luajava.bindClass("com.android.internal.R$dimen")().status_bar_height);
+      layout_width="-1";
+    };
+    {
+      LinearLayout;--顶栏--
+      layout_height="56dp";
+      layout_width="-1";
+      gravity="left|center";
+        {
+        ImageView;
+        layout_height="56dp";
+        layout_width="56dp";
+        padding="16dp";
+        ColorFilter="#ffffffff";
+        id="back";
+        src="image/twotone_arrow_back_black_24dp.png";
+      };
+      {
+        TextView;
+        layout_height="-2";
+        layout_width="-1";
+        layout_weight="1";
+        paddingLeft="16dp";
+        textColor="#ffffffff";
+        
+        textSize="20sp";
+        id="标题";
+      };
+     
+    };
+   
+  };
+  {
+    LinearLayout;
+    layout_height="fill";
+    layout_width="fill";
+    id="布局";
+  };
+}

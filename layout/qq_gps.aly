@@ -1,0 +1,28 @@
+{
+  LinearLayout;
+  orientation="vertical";
+  layout_height="fill";
+  layout_width="fill";
+  {
+    PageView;
+    id="slide";
+    layout_width="fill";
+    layout_height="fill";
+    background="#FFFFFFFF";
+    pages={
+      {
+        LuaWebView;
+        layout_width="fill";
+        layout_height="fill";
+        id="TbsWebView";
+      },
+    
+      {
+        LuaWebView;
+        layout_width="fill";
+        layout_height="fill";
+        id="TbsWebView2"
+      },
+    }
+  };
+};
